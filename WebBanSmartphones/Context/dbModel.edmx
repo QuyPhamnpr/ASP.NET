@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WebSiteBanHangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WebSiteBanHang.dbo.Brand_2119110227' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Brand_2119110227">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Avatar" Type="nvarchar" MaxLength="100" />
+          <Property Name="Slug" Type="nvarchar" MaxLength="100" />
+          <Property Name="ShowOnHomePage" Type="bit" />
+          <Property Name="DisplayOrder" Type="int" />
+          <Property Name="GreatedOnUtc" Type="datetime" />
+          <Property Name="UpdatedOnUtc" Type="datetime" />
+          <Property Name="Deleted" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WebSiteBanHang.dbo.Category_2119110227' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Category_2119110227">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Avatar" Type="nchar" MaxLength="100" />
+          <Property Name="Slug" Type="varchar" MaxLength="100" />
+          <Property Name="ShowOnHomePage" Type="bit" />
+          <Property Name="DisplayOrder" Type="int" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="CreatedOnUtc" Type="datetime" />
+          <Property Name="UpdatedOnUtc" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WebSiteBanHang.dbo.Order_2119110227' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Order_2119110227">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="Price" Type="float" />
+          <Property Name="Status" Type="int" />
+          <Property Name="CreatedOnUtc" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WebSiteBanHang.dbo.Product_2119110227' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Product_2119110227">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Avatar" Type="nchar" MaxLength="100" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="ShortDes" Type="nvarchar" MaxLength="100" />
+          <Property Name="FullDescription" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="float" />
+          <Property Name="PriceDiscouunt" Type="float" />
+          <Property Name="TypleId" Type="int" />
+          <Property Name="Slug" Type="varchar" MaxLength="50" />
+          <Property Name="BrandId" Type="int" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="ShowOnHomePage" Type="bit" />
+          <Property Name="DisplayOrder" Type="int" />
+          <Property Name="CreatedOnUtc" Type="datetime" />
+          <Property Name="UpdateOnUtc" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WebSiteBanHang.dbo.Users_2119110227' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Users_2119110227">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="isAdmin" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="WebSiteBanHangModelStoreContainer">
+          <EntitySet Name="Brand_2119110227" EntityType="Self.Brand_2119110227" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Brand_2119110227].[Id] AS [Id], 
+    [Brand_2119110227].[Name] AS [Name], 
+    [Brand_2119110227].[Avatar] AS [Avatar], 
+    [Brand_2119110227].[Slug] AS [Slug], 
+    [Brand_2119110227].[ShowOnHomePage] AS [ShowOnHomePage], 
+    [Brand_2119110227].[DisplayOrder] AS [DisplayOrder], 
+    [Brand_2119110227].[GreatedOnUtc] AS [GreatedOnUtc], 
+    [Brand_2119110227].[UpdatedOnUtc] AS [UpdatedOnUtc], 
+    [Brand_2119110227].[Deleted] AS [Deleted]
+    FROM [dbo].[Brand_2119110227] AS [Brand_2119110227]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Category_2119110227" EntityType="Self.Category_2119110227" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Category_2119110227].[Id] AS [Id], 
+    [Category_2119110227].[Name] AS [Name], 
+    [Category_2119110227].[Avatar] AS [Avatar], 
+    [Category_2119110227].[Slug] AS [Slug], 
+    [Category_2119110227].[ShowOnHomePage] AS [ShowOnHomePage], 
+    [Category_2119110227].[DisplayOrder] AS [DisplayOrder], 
+    [Category_2119110227].[Deleted] AS [Deleted], 
+    [Category_2119110227].[CreatedOnUtc] AS [CreatedOnUtc], 
+    [Category_2119110227].[UpdatedOnUtc] AS [UpdatedOnUtc]
+    FROM [dbo].[Category_2119110227] AS [Category_2119110227]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Order_2119110227" EntityType="Self.Order_2119110227" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Order_2119110227].[Id] AS [Id], 
+    [Order_2119110227].[Name] AS [Name], 
+    [Order_2119110227].[ProductId] AS [ProductId], 
+    [Order_2119110227].[Price] AS [Price], 
+    [Order_2119110227].[Status] AS [Status], 
+    [Order_2119110227].[CreatedOnUtc] AS [CreatedOnUtc]
+    FROM [dbo].[Order_2119110227] AS [Order_2119110227]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Product_2119110227" EntityType="Self.Product_2119110227" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Product_2119110227].[Id] AS [Id], 
+    [Product_2119110227].[Name] AS [Name], 
+    [Product_2119110227].[Avatar] AS [Avatar], 
+    [Product_2119110227].[CategoryId] AS [CategoryId], 
+    [Product_2119110227].[ShortDes] AS [ShortDes], 
+    [Product_2119110227].[FullDescription] AS [FullDescription], 
+    [Product_2119110227].[Price] AS [Price], 
+    [Product_2119110227].[PriceDiscouunt] AS [PriceDiscouunt], 
+    [Product_2119110227].[TypleId] AS [TypleId], 
+    [Product_2119110227].[Slug] AS [Slug], 
+    [Product_2119110227].[BrandId] AS [BrandId], 
+    [Product_2119110227].[Deleted] AS [Deleted], 
+    [Product_2119110227].[ShowOnHomePage] AS [ShowOnHomePage], 
+    [Product_2119110227].[DisplayOrder] AS [DisplayOrder], 
+    [Product_2119110227].[CreatedOnUtc] AS [CreatedOnUtc], 
+    [Product_2119110227].[UpdateOnUtc] AS [UpdateOnUtc]
+    FROM [dbo].[Product_2119110227] AS [Product_2119110227]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Users_2119110227" EntityType="Self.Users_2119110227" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Users_2119110227].[Id] AS [Id], 
+    [Users_2119110227].[FirstName] AS [FirstName], 
+    [Users_2119110227].[LastName] AS [LastName], 
+    [Users_2119110227].[Email] AS [Email], 
+    [Users_2119110227].[Password] AS [Password], 
+    [Users_2119110227].[isAdmin] AS [isAdmin]
+    FROM [dbo].[Users_2119110227] AS [Users_2119110227]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WebSiteBanHangModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Brand_2119110227">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Avatar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Slug" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ShowOnHomePage" Type="Boolean" />
+          <Property Name="DisplayOrder" Type="Int32" />
+          <Property Name="GreatedOnUtc" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOnUtc" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Category_2119110227">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Avatar" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="Slug" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ShowOnHomePage" Type="Boolean" />
+          <Property Name="DisplayOrder" Type="Int32" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="CreatedOnUtc" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOnUtc" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Order_2119110227">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="CreatedOnUtc" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Product_2119110227">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Avatar" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="ShortDes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FullDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="PriceDiscouunt" Type="Double" />
+          <Property Name="TypleId" Type="Int32" />
+          <Property Name="Slug" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BrandId" Type="Int32" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="ShowOnHomePage" Type="Boolean" />
+          <Property Name="DisplayOrder" Type="Int32" />
+          <Property Name="CreatedOnUtc" Type="DateTime" Precision="3" />
+          <Property Name="UpdateOnUtc" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Users_2119110227">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isAdmin" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="WebSiteBanHangEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Brand_2119110227" EntityType="Self.Brand_2119110227" />
+          <EntitySet Name="Category_2119110227" EntityType="Self.Category_2119110227" />
+          <EntitySet Name="Order_2119110227" EntityType="Self.Order_2119110227" />
+          <EntitySet Name="Product_2119110227" EntityType="Self.Product_2119110227" />
+          <EntitySet Name="Users_2119110227" EntityType="Self.Users_2119110227" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WebSiteBanHangModelStoreContainer" CdmEntityContainer="WebSiteBanHangEntities">
+          <EntitySetMapping Name="Brand_2119110227">
+            <EntityTypeMapping TypeName="WebSiteBanHangModel.Brand_2119110227">
+              <MappingFragment StoreEntitySet="Brand_2119110227">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="Slug" ColumnName="Slug" />
+                <ScalarProperty Name="ShowOnHomePage" ColumnName="ShowOnHomePage" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="GreatedOnUtc" ColumnName="GreatedOnUtc" />
+                <ScalarProperty Name="UpdatedOnUtc" ColumnName="UpdatedOnUtc" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Category_2119110227">
+            <EntityTypeMapping TypeName="WebSiteBanHangModel.Category_2119110227">
+              <MappingFragment StoreEntitySet="Category_2119110227">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="Slug" ColumnName="Slug" />
+                <ScalarProperty Name="ShowOnHomePage" ColumnName="ShowOnHomePage" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="CreatedOnUtc" ColumnName="CreatedOnUtc" />
+                <ScalarProperty Name="UpdatedOnUtc" ColumnName="UpdatedOnUtc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_2119110227">
+            <EntityTypeMapping TypeName="WebSiteBanHangModel.Order_2119110227">
+              <MappingFragment StoreEntitySet="Order_2119110227">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedOnUtc" ColumnName="CreatedOnUtc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_2119110227">
+            <EntityTypeMapping TypeName="WebSiteBanHangModel.Product_2119110227">
+              <MappingFragment StoreEntitySet="Product_2119110227">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ShortDes" ColumnName="ShortDes" />
+                <ScalarProperty Name="FullDescription" ColumnName="FullDescription" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="PriceDiscouunt" ColumnName="PriceDiscouunt" />
+                <ScalarProperty Name="TypleId" ColumnName="TypleId" />
+                <ScalarProperty Name="Slug" ColumnName="Slug" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="ShowOnHomePage" ColumnName="ShowOnHomePage" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="CreatedOnUtc" ColumnName="CreatedOnUtc" />
+                <ScalarProperty Name="UpdateOnUtc" ColumnName="UpdateOnUtc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users_2119110227">
+            <EntityTypeMapping TypeName="WebSiteBanHangModel.Users_2119110227">
+              <MappingFragment StoreEntitySet="Users_2119110227">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

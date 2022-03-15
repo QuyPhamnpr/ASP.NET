@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBanSmartphones", "WebBanSmartphones\WebBanSmartphones.csproj", "{AB534902-DA94-4F5A-9F18-8413882C7839}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB534902-DA94-4F5A-9F18-8413882C7839}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB534902-DA94-4F5A-9F18-8413882C7839}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB534902-DA94-4F5A-9F18-8413882C7839}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB534902-DA94-4F5A-9F18-8413882C7839}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DB3814C-2914-4CD7-8598-0B71B1DE7E8D}
+	EndGlobalSection
+EndGlobal
