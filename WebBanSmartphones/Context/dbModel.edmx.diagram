@@ -4,12 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="28c0d2676b254c44a4b0911912e4385d" Name="Diagram1">
+      <Diagram DiagramId="4c820d624c3c4535b0529fd4fb2bfe92" Name="Diagram1">
         <EntityTypeShape EntityType="WebSiteBanHangModel.Brand_2119110227" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="WebSiteBanHangModel.Category_2119110227" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebSiteBanHangModel.Order_2119110227" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebSiteBanHangModel.Product_2119110227" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebSiteBanHangModel.Users_2119110227" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebSiteBanHangModel.Contact_2119110227" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebSiteBanHangModel.Order_2119110227" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebSiteBanHangModel.OrderDetail_2119110227" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebSiteBanHangModel.Product_2119110227" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebSiteBanHangModel.Users_2119110227" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
