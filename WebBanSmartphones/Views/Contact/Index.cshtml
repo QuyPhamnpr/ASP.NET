@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    h2{
+        text-align: center;
+        padding-top:20px;
+    }
+    .Tille{
+        height: 80px;
+        background-color: yellow;
+    }
+</style>
+<div class="Tille">
+    <h2><b>Trang Hỗ Trợ</b></h2>
+</div>
+
+<div class="contact-p">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12  p-l-0 p-l-xs-7-5">
+                <div class="content clearfix">
+
+                    <div class="col-md-7" id="col-left contactFormWrapper">
+                        <h4 class="title-contact-p">Hãy liên hệ ngay với chúng tôi để được hỗ trợ một cách tốt nhất</h4>
+                        <hr class="line-left">
+
+                        <div class="contact-form">
+
+                            <div class="form-group">
+                                <label for="contactFormName" class="sr-only">Họ tên</label>
+                                <input name="ctl26$ctl00$ctl00$ctl00$txtname" type="text" id="txtname" class="form-control input-lg" placeholder="Họ tên">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactFormName" class="sr-only">Số điện thoại</label>
+                                <input name="ctl26$ctl00$ctl00$ctl00$txtphone" type="text" id="txtphone" class="form-control input-lg" placeholder="Số điện thoại">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactFormEmail" class="sr-only">Email</label>
+                                <input name="ctl26$ctl00$ctl00$ctl00$txtemail" type="text" id="txtemail" class="form-control form-control-lg" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactFormMessage" class="sr-only">Nội dung</label>
+                                <textarea name="ctl26$ctl00$ctl00$ctl00$txtcontent" rows="5" cols="40" id="txtcontent" class="form-control form-control-lg" placeholder="Nội dung"></textarea>
+                            </div>
+                            <input type="submit" name="ctl26$ctl00$ctl00$ctl00$btnsend" value="Gửi thông tin" id="btnsend" class="btn btn-primary btn-lg">
+                        </div>
+                    </div>
+                    <div class="col-md-5" id="col-right">
+                        <h3>Địa chỉ liên lạc</h3>
+                        <hr class="line-right">
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.9666858709447!2d105.77609831455966!3d20.99397248601721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134534bcb418009%3A0x8012ddd24dfafe74!2sChung%20C%C6%B0%2017T2%20Trung%20V%C4%83n!5e0!3m2!1svi!2s!4v1595326642040!5m2!1svi!2s" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

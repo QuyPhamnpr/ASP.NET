@@ -1,24 +1,23 @@
 ﻿using System.Web.Mvc;
 
-namespace WebBanSmartphones.Areas.AdminQP
+namespace WebBanSmartphones.Areas.Adminqp
 {
-    public class AdminQPAreaRegistration : AreaRegistration 
+    public class AdminqpAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
         {
             get 
             {
-                return "AdminQP";
+                return "Adminqp";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "AdminQP_default",
-                "AdminQP/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional },
-                new[] { "WebBanSmartphones.Areas.Admin.Controllers" }
+                "Adminqp_default",
+                "Adminqp/{controller}/{action}/{id}",
+                new { action = "Index", id = UrlParameter.Optional }
             );
         }
     }

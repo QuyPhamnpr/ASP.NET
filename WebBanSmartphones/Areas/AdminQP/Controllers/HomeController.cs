@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace WebBanSmartphones.Areas.AdminQP.Controllers
+namespace WebBanSmartphones.Areas.Adminqp.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: AdminQP/Home
+        // GET: Adminqp/Home
         public ActionResult Index()
         {
             return View();

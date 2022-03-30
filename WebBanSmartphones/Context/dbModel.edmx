@@ -5,8 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="WebSiteBanHangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'WebSiteBanHang.dbo.Brand_2119110227' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Brand_2119110227">
           <Key>
             <PropertyRef Name="Id" />
@@ -21,8 +19,6 @@ warning 6002: The table/view 'WebSiteBanHang.dbo.Brand_2119110227' does not have
           <Property Name="UpdatedOnUtc" Type="datetime" />
           <Property Name="Deleted" Type="bit" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'WebSiteBanHang.dbo.Category_2119110227' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Category_2119110227">
           <Key>
             <PropertyRef Name="Id" />
@@ -37,21 +33,37 @@ warning 6002: The table/view 'WebSiteBanHang.dbo.Category_2119110227' does not h
           <Property Name="CreatedOnUtc" Type="datetime" />
           <Property Name="UpdatedOnUtc" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'WebSiteBanHang.dbo.Order_2119110227' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Contact_2119110227">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone" Type="int" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Content" Type="nvarchar" MaxLength="100" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="UpdateOnUtc" Type="datetime" />
+        </EntityType>
         <EntityType Name="Order_2119110227">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" />
-          <Property Name="ProductId" Type="int" />
-          <Property Name="Price" Type="float" />
+          <Property Name="UserId" Type="int" />
           <Property Name="Status" Type="int" />
           <Property Name="CreatedOnUtc" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'WebSiteBanHang.dbo.Product_2119110227' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="OrderDetail_2119110227">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="Quantity" Type="int" />
+        </EntityType>
         <EntityType Name="Product_2119110227">
           <Key>
             <PropertyRef Name="Id" />
@@ -73,8 +85,6 @@ warning 6002: The table/view 'WebSiteBanHang.dbo.Product_2119110227' does not ha
           <Property Name="CreatedOnUtc" Type="datetime" />
           <Property Name="UpdateOnUtc" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'WebSiteBanHang.dbo.Users_2119110227' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Users_2119110227">
           <Key>
             <PropertyRef Name="Id" />
@@ -84,75 +94,16 @@ warning 6002: The table/view 'WebSiteBanHang.dbo.Users_2119110227' does not have
           <Property Name="LastName" Type="varchar" MaxLength="50" />
           <Property Name="Email" Type="varchar" MaxLength="50" />
           <Property Name="Password" Type="varchar" MaxLength="50" />
-          <Property Name="isAdmin" Type="bit" />
+          <Property Name="IsAdmin" Type="bit" />
         </EntityType>
         <EntityContainer Name="WebSiteBanHangModelStoreContainer">
-          <EntitySet Name="Brand_2119110227" EntityType="Self.Brand_2119110227" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Brand_2119110227].[Id] AS [Id], 
-    [Brand_2119110227].[Name] AS [Name], 
-    [Brand_2119110227].[Avatar] AS [Avatar], 
-    [Brand_2119110227].[Slug] AS [Slug], 
-    [Brand_2119110227].[ShowOnHomePage] AS [ShowOnHomePage], 
-    [Brand_2119110227].[DisplayOrder] AS [DisplayOrder], 
-    [Brand_2119110227].[GreatedOnUtc] AS [GreatedOnUtc], 
-    [Brand_2119110227].[UpdatedOnUtc] AS [UpdatedOnUtc], 
-    [Brand_2119110227].[Deleted] AS [Deleted]
-    FROM [dbo].[Brand_2119110227] AS [Brand_2119110227]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Category_2119110227" EntityType="Self.Category_2119110227" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Category_2119110227].[Id] AS [Id], 
-    [Category_2119110227].[Name] AS [Name], 
-    [Category_2119110227].[Avatar] AS [Avatar], 
-    [Category_2119110227].[Slug] AS [Slug], 
-    [Category_2119110227].[ShowOnHomePage] AS [ShowOnHomePage], 
-    [Category_2119110227].[DisplayOrder] AS [DisplayOrder], 
-    [Category_2119110227].[Deleted] AS [Deleted], 
-    [Category_2119110227].[CreatedOnUtc] AS [CreatedOnUtc], 
-    [Category_2119110227].[UpdatedOnUtc] AS [UpdatedOnUtc]
-    FROM [dbo].[Category_2119110227] AS [Category_2119110227]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Order_2119110227" EntityType="Self.Order_2119110227" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Order_2119110227].[Id] AS [Id], 
-    [Order_2119110227].[Name] AS [Name], 
-    [Order_2119110227].[ProductId] AS [ProductId], 
-    [Order_2119110227].[Price] AS [Price], 
-    [Order_2119110227].[Status] AS [Status], 
-    [Order_2119110227].[CreatedOnUtc] AS [CreatedOnUtc]
-    FROM [dbo].[Order_2119110227] AS [Order_2119110227]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Product_2119110227" EntityType="Self.Product_2119110227" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Product_2119110227].[Id] AS [Id], 
-    [Product_2119110227].[Name] AS [Name], 
-    [Product_2119110227].[Avatar] AS [Avatar], 
-    [Product_2119110227].[CategoryId] AS [CategoryId], 
-    [Product_2119110227].[ShortDes] AS [ShortDes], 
-    [Product_2119110227].[FullDescription] AS [FullDescription], 
-    [Product_2119110227].[Price] AS [Price], 
-    [Product_2119110227].[PriceDiscouunt] AS [PriceDiscouunt], 
-    [Product_2119110227].[TypleId] AS [TypleId], 
-    [Product_2119110227].[Slug] AS [Slug], 
-    [Product_2119110227].[BrandId] AS [BrandId], 
-    [Product_2119110227].[Deleted] AS [Deleted], 
-    [Product_2119110227].[ShowOnHomePage] AS [ShowOnHomePage], 
-    [Product_2119110227].[DisplayOrder] AS [DisplayOrder], 
-    [Product_2119110227].[CreatedOnUtc] AS [CreatedOnUtc], 
-    [Product_2119110227].[UpdateOnUtc] AS [UpdateOnUtc]
-    FROM [dbo].[Product_2119110227] AS [Product_2119110227]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Users_2119110227" EntityType="Self.Users_2119110227" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Users_2119110227].[Id] AS [Id], 
-    [Users_2119110227].[FirstName] AS [FirstName], 
-    [Users_2119110227].[LastName] AS [LastName], 
-    [Users_2119110227].[Email] AS [Email], 
-    [Users_2119110227].[Password] AS [Password], 
-    [Users_2119110227].[isAdmin] AS [isAdmin]
-    FROM [dbo].[Users_2119110227] AS [Users_2119110227]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Brand_2119110227" EntityType="Self.Brand_2119110227" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category_2119110227" EntityType="Self.Category_2119110227" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact_2119110227" EntityType="Self.Contact_2119110227" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_2119110227" EntityType="Self.Order_2119110227" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetail_2119110227" EntityType="Self.OrderDetail_2119110227" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product_2119110227" EntityType="Self.Product_2119110227" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users_2119110227" EntityType="Self.Users_2119110227" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -187,16 +138,36 @@ warning 6002: The table/view 'WebSiteBanHang.dbo.Users_2119110227' does not have
           <Property Name="CreatedOnUtc" Type="DateTime" Precision="3" />
           <Property Name="UpdatedOnUtc" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="Contact_2119110227">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="UpdateOnUtc" Type="DateTime" Precision="3" />
+        </EntityType>
         <EntityType Name="Order_2119110227">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ProductId" Type="Int32" />
-          <Property Name="Price" Type="Double" />
+          <Property Name="UserId" Type="Int32" />
           <Property Name="Status" Type="Int32" />
           <Property Name="CreatedOnUtc" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OrderDetail_2119110227">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="Int32" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="Quantity" Type="Int32" />
         </EntityType>
         <EntityType Name="Product_2119110227">
           <Key>
@@ -228,12 +199,14 @@ warning 6002: The table/view 'WebSiteBanHang.dbo.Users_2119110227' does not have
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="isAdmin" Type="Boolean" />
+          <Property Name="IsAdmin" Type="Boolean" />
         </EntityType>
         <EntityContainer Name="WebSiteBanHangEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Brand_2119110227" EntityType="Self.Brand_2119110227" />
           <EntitySet Name="Category_2119110227" EntityType="Self.Category_2119110227" />
+          <EntitySet Name="Contact_2119110227" EntityType="Self.Contact_2119110227" />
           <EntitySet Name="Order_2119110227" EntityType="Self.Order_2119110227" />
+          <EntitySet Name="OrderDetail_2119110227" EntityType="Self.OrderDetail_2119110227" />
           <EntitySet Name="Product_2119110227" EntityType="Self.Product_2119110227" />
           <EntitySet Name="Users_2119110227" EntityType="Self.Users_2119110227" />
         </EntityContainer>
@@ -273,15 +246,37 @@ warning 6002: The table/view 'WebSiteBanHang.dbo.Users_2119110227' does not have
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Contact_2119110227">
+            <EntityTypeMapping TypeName="WebSiteBanHangModel.Contact_2119110227">
+              <MappingFragment StoreEntitySet="Contact_2119110227">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdateOnUtc" ColumnName="UpdateOnUtc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Order_2119110227">
             <EntityTypeMapping TypeName="WebSiteBanHangModel.Order_2119110227">
               <MappingFragment StoreEntitySet="Order_2119110227">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="CreatedOnUtc" ColumnName="CreatedOnUtc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetail_2119110227">
+            <EntityTypeMapping TypeName="WebSiteBanHangModel.OrderDetail_2119110227">
+              <MappingFragment StoreEntitySet="OrderDetail_2119110227">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -315,7 +310,7 @@ warning 6002: The table/view 'WebSiteBanHang.dbo.Users_2119110227' does not have
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

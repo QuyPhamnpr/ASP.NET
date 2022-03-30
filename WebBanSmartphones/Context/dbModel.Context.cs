@@ -27,7 +27,9 @@ namespace WebBanSmartphones.Context
     
         public virtual DbSet<Brand_2119110227> Brand_2119110227 { get; set; }
         public virtual DbSet<Category_2119110227> Category_2119110227 { get; set; }
+        public virtual DbSet<Contact_2119110227> Contact_2119110227 { get; set; }
         public virtual DbSet<Order_2119110227> Order_2119110227 { get; set; }
+        public virtual DbSet<OrderDetail_2119110227> OrderDetail_2119110227 { get; set; }
         public virtual DbSet<Product_2119110227> Product_2119110227 { get; set; }
         public virtual DbSet<Users_2119110227> Users_2119110227 { get; set; }
     }
