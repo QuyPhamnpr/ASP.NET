@@ -1,0 +1,53 @@
+﻿@model WebBanSmartphones.Context.Category_2119110227
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Adminqp/Views/Shared/_Layout.cshtml";
+}
+<h2 style="text-align:center"><b>Xóa Sản Phẩm</b></h2>
+
+
+<div>
+    <h4>Sản Phẩm</h4>
+
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Avatar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Avatar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Slug)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Slug)
+        </dd>
+
+
+
+    </dl>
+
+    @using (Html.BeginForm("Delete", "Category", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

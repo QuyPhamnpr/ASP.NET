@@ -1,0 +1,46 @@
+﻿@model WebBanSmartphones.Context.Category_2119110227
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Adminqp/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <h2 style="text-align:center"><b>Chi Tiết Sản Phẩm</b></h2>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Avatar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Avatar)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Slug)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Slug)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

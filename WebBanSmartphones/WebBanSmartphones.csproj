@@ -138,6 +138,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Adminqp\AdminqpAreaRegistration.cs" />
+    <Compile Include="Areas\Adminqp\Controllers\BrandController.cs" />
+    <Compile Include="Areas\Adminqp\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Adminqp\Controllers\HomeController.cs" />
     <Compile Include="Areas\Adminqp\Controllers\ProductController.cs" />
     <Compile Include="Common.cs" />
@@ -189,6 +191,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CartModel.cs" />
+    <Compile Include="Models\CategoryMasterData.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\PartialMetadataType.cs" />
     <Compile Include="Models\ProductMasterData.cs" />
@@ -2345,6 +2348,16 @@
     <Content Include="Context\dbModel.edmx.diagram">
       <DependentUpon>dbModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Adminqp\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Adminqp\Views\Category\Create.cshtml" />
+    <Content Include="Areas\Adminqp\Views\Category\Details.cshtml" />
+    <Content Include="Areas\Adminqp\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\Adminqp\Views\Brand\Index.cshtml" />
+    <Content Include="Areas\Adminqp\Views\Brand\Create.cshtml" />
+    <Content Include="Areas\Adminqp\Views\Brand\Details.cshtml" />
+    <Content Include="Areas\Adminqp\Views\Brand\Delete.cshtml" />
+    <Content Include="Areas\Adminqp\Views\Brand\Edit.cshtml" />
+    <Content Include="Areas\Adminqp\Views\Category\Delete.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />
@@ -2695,8 +2708,6 @@
     <Content Include="Views\Brand\Index.cshtml" />
     <Content Include="Views\Brand\ProductBrandList.cshtml" />
     <Content Include="Views\Product\Create.cshtml" />
-    <Content Include="Views\Card\Index.cshtml" />
-    <Content Include="Views\Card\AddToCart.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Payment\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />

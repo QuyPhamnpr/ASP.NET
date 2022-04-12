@@ -18,7 +18,7 @@ namespace WebBanSmartphones.Controllers
             HomeModel objHomeModel = new HomeModel();
             objHomeModel.ListCategory = objWebSiteBanHangEntities.Category_2119110227.ToList();
             objHomeModel.ListProduct = objWebSiteBanHangEntities.Product_2119110227.ToList();
-
+          
             return View(objHomeModel);
         }
         //dang ky

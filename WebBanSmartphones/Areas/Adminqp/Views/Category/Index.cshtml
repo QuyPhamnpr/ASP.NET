@@ -1,16 +1,17 @@
 ﻿@using PagedList;
 @using PagedList.Mvc;
-@model PagedList.IPagedList<WebBanSmartphones.Context.Product_2119110227>
-
+@model PagedList.IPagedList<WebBanSmartphones.Context.Category_2119110227>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Adminqp/Views/Shared/_Layout.cshtml";
 }
+
 <style>
     .edit-a-icon {
         color: red;
-        padding-right:5px;
+        padding-right: 5px;
     }
+
     .edit-a-icon2 {
         color: black;
     }
@@ -21,6 +22,7 @@
         border: 1px solid;
         text-align: center;
     }
+
     .Table_edit {
         display: flex;
     }
@@ -32,6 +34,7 @@
     button, input {
         border-radius: 8px;
     }
+
     .pagination {
         display: inline-block;
         padding-left: 0;
@@ -187,18 +190,18 @@
             cursor: not-allowed;
             background-color: #ffffff;
         }
-    .img-wrap-qp{
+    .img-wrap-qp {
         height: 200px;
         width: 240px;
     }
 </style>
 
-<h2><b>Quản Lý Sản Phẩm</b></h2>
+<h2><b>Quản Lý Danh Mục</b></h2>
 
 <p>
     @Html.ActionLink("Tạo Sản Phẩm Mới", "Create")
 </p>
-@using (Html.BeginForm("Index", "Product", FormMethod.Get))
+@using (Html.BeginForm("Index", "Category", FormMethod.Get))
 {
     <p>
         Tìm tên sản phẩm: @Html.TextBox("SearchString", ViewBag.CurrentFiler as string)
@@ -214,30 +217,11 @@
         <th>
             @Html.DisplayNameFor(model => model.FirstOrDefault().Avatar)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().CategoryId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().ShortDes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().FullDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().PriceDiscouunt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().TypleId)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.FirstOrDefault().Slug)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().BrandId)
-        </th>
+       
         <th></th>
     </tr>
 
@@ -248,36 +232,18 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                    <img src="~/Content/images/items/@item.Avatar" class="img-wrap-qp">
+                <img src="~/Content/images/items/@item.Avatar" class="img-wrap-qp">
+
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CategoryId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShortDes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PriceDiscouunt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TypleId)
-            </td>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.Slug)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BrandId)
-            </td>
+           
             <td class="Table_edit">
-                <a href=@Url.Action("Edit", "Product", new { id = item.Id }) class="edit-a-icon"><i class='far fa-edit'></i> </a>
-                <a href=@Url.Action("Details", "Product", new { id = item.Id }) class="edit-a-icon1"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                <a href=@Url.Action("Delete", "Product", new { id = item.Id }) class="edit-a-icon2"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                <a href=@Url.Action("Edit", "Category", new { id = item.Id }) class="edit-a-icon"><i class='far fa-edit'></i> </a>
+                <a href=@Url.Action("Details", "Category", new { id = item.Id }) class="edit-a-icon1"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                <a href=@Url.Action("Delete", "Category", new { id = item.Id }) class="edit-a-icon2"><i class="fa fa-trash" aria-hidden="true"></i></a>
             </td>
         </tr>
     }

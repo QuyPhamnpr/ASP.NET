@@ -19,4 +19,15 @@ namespace WebBanSmartphones.Context
         [NotMapped]
         public System.Web.HttpPostedFileBase ImageUpload { get; set; }
     }
+    [MetadataType(typeof(CategoryMasterData))]
+    public partial class Category_2119110227
+    {
+        [NotMapped]
+        public System.Web.HttpPostedFileBase ImageUpload { get; set; }
+    }
+    public partial class Brand_2119110227
+    {
+        [NotMapped]
+        public System.Web.HttpPostedFileBase ImageUpload { get; set; }
+    }
 }

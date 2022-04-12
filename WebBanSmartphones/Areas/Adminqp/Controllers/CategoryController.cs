@@ -12,13 +12,13 @@ using static WebBanSmartphones.Common;
 
 namespace WebBanSmartphones.Areas.Adminqp.Controllers
 {
-    public class ProductController : Controller
+    public class CategoryController : Controller
     {
         WebSiteBanHangEntities objWebSiteBanHangEntities = new WebSiteBanHangEntities();
         // GET: Adminqp/Product
         public ActionResult Index(string currentFileter, string SearchString, int? page)
-        { 
-            var lstProduct = new List<Product_2119110227>();
+        {
+            var lstCategory = new List<Category_2119110227>();
             if (SearchString != null)
             {
                 page = 1;
@@ -29,17 +29,17 @@ namespace WebBanSmartphones.Areas.Adminqp.Controllers
             }
             if (!string.IsNullOrEmpty(SearchString))
             {
-                lstProduct = objWebSiteBanHangEntities.Product_2119110227.Where(n => n.Name.Contains(SearchString)).ToList();
+                lstCategory = objWebSiteBanHangEntities.Category_2119110227.Where(n => n.Name.Contains(SearchString)).ToList();
             }
             else
             {
-                lstProduct = objWebSiteBanHangEntities.Product_2119110227.ToList();
+                lstCategory = objWebSiteBanHangEntities.Category_2119110227.ToList();
             }
             ViewBag.CurrentFilter = SearchString;
             int pageSize = 4;
             int pageNumber = (page ?? 1);
-            lstProduct = lstProduct.OrderByDescending(n => n.Id).ToList();
-            return View(lstProduct.ToPagedList(pageNumber, pageSize));
+            lstCategory = lstCategory.OrderByDescending(n => n.Id).ToList();
+            return View(lstCategory.ToPagedList(pageNumber, pageSize));
         }
         [HttpGet]
         public ActionResult Create()
@@ -52,7 +52,7 @@ namespace WebBanSmartphones.Areas.Adminqp.Controllers
 
         [ValidateInput(false)]
         [HttpPost]
-        public ActionResult Create(Product_2119110227 objProduct)
+        public ActionResult Create(Category_2119110227 objCategory)
         {
             this.LoadData();
             if (ModelState.IsValid)
@@ -60,16 +60,16 @@ namespace WebBanSmartphones.Areas.Adminqp.Controllers
                 try
                 {
 
-                    if (objProduct.ImageUpload != null)
+                    if (objCategory.ImageUpload != null)
                     {
-                        string fileName = Path.GetFileNameWithoutExtension(objProduct.ImageUpload.FileName);
-                        string extension = Path.GetExtension(objProduct.ImageUpload.FileName);
+                        string fileName = Path.GetFileNameWithoutExtension(objCategory.ImageUpload.FileName);
+                        string extension = Path.GetExtension(objCategory.ImageUpload.FileName);
                         fileName = fileName + extension;
-                        objProduct.Avatar = fileName;
-                        objProduct.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/images/items/"), fileName));
+                        objCategory.Avatar = fileName;
+                        objCategory.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/images/items/"), fileName));
                     }
-                    objProduct.CreatedOnUtc = DateTime.Now;
-                    objWebSiteBanHangEntities.Product_2119110227.Add(objProduct);
+                    objCategory.CreatedOnUtc = DateTime.Now;
+                    objWebSiteBanHangEntities.Category_2119110227.Add(objCategory);
                     objWebSiteBanHangEntities.SaveChanges();
 
                     return RedirectToAction("Index");
@@ -79,45 +79,45 @@ namespace WebBanSmartphones.Areas.Adminqp.Controllers
                     return View();
                 }
             }
-            return View(objProduct);
+            return View(objCategory);
         }
         [HttpGet]
         public ActionResult Details(int id)
         {
-            var objProduct = objWebSiteBanHangEntities.Product_2119110227.Where(n => n.Id == id).FirstOrDefault();
-            return View(objProduct);
+            var objCategory = objWebSiteBanHangEntities.Category_2119110227.Where(n => n.Id == id).FirstOrDefault();
+            return View(objCategory);
         }
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            var objProduct = objWebSiteBanHangEntities.Product_2119110227.Where(n => n.Id == id).FirstOrDefault();
-            return View(objProduct);
+            var objCategory = objWebSiteBanHangEntities.Category_2119110227.Where(n => n.Id == id).FirstOrDefault();
+            return View(objCategory);
         }
         [HttpPost]
-        public ActionResult Delete(Product_2119110227 objPro)
+        public ActionResult Delete(Category_2119110227 objPro)
         {
-            var objProduct = objWebSiteBanHangEntities.Product_2119110227.Where(n => n.Id == objPro.Id).FirstOrDefault();
-            objWebSiteBanHangEntities.Product_2119110227.Remove(objProduct);
+            var objCategory = objWebSiteBanHangEntities.Category_2119110227.Where(n => n.Id == objPro.Id).FirstOrDefault();
+            objWebSiteBanHangEntities.Category_2119110227.Remove(objCategory);
             objWebSiteBanHangEntities.SaveChanges();
             return RedirectToAction("Index");
         }
         public ActionResult Edit(int id)
         {
-            var objProduct = objWebSiteBanHangEntities.Product_2119110227.Where(n => n.Id == id).FirstOrDefault();
-            return View(objProduct);
+            var objCategory = objWebSiteBanHangEntities.Category_2119110227.Where(n => n.Id == id).FirstOrDefault();
+            return View(objCategory);
         }
         [HttpPost]
-        public ActionResult Edit(int id, Product_2119110227 objProduct)
+        public ActionResult Edit(int id, Category_2119110227 objCategory)
         {
-            if (objProduct.ImageUpload != null)
+            if (objCategory.ImageUpload != null)
             {
-                string fileName = Path.GetFileNameWithoutExtension(objProduct.ImageUpload.FileName);
-                string extension = Path.GetExtension(objProduct.ImageUpload.FileName);
+                string fileName = Path.GetFileNameWithoutExtension(objCategory.ImageUpload.FileName);
+                string extension = Path.GetExtension(objCategory.ImageUpload.FileName);
                 fileName = fileName + extension;
-                objProduct.Avatar = fileName;
-                objProduct.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/images/items/"), fileName));
+                objCategory.Avatar = fileName;
+                objCategory.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/images/items/"), fileName));
             }
-            objWebSiteBanHangEntities.Entry(objProduct).State = EntityState.Modified;
+            objWebSiteBanHangEntities.Entry(objCategory).State = EntityState.Modified;
             objWebSiteBanHangEntities.SaveChanges();
             return RedirectToAction("Index");
         }
